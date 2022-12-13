@@ -22,7 +22,8 @@ import * as PostController from './controllers/PostController.js'
 /* DB */
 mongoose.set('strictQuery', true)
 
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect('mongodb+srv://yung:dune@cluster0.6j7kqnf.mongodb.net/blogio?retryWrites=true&w=majority'
+)
         .then(() => {
             console.log('DB is alright fam')
         })
