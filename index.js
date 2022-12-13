@@ -2,6 +2,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import multer from 'multer'
+import cors from 'cors'
 /* validations */
 import { loginValidation, postCreateValidation, registerValidation } from './validations.js'
 /* middleware */
@@ -46,6 +47,7 @@ const upload = multer ({ storage })
 /* Express */
 const app = express()
 
+app.use(cors()) // !!
 app.use(express.json())
 
 app.get ('/', (req, res) =>{ 
