@@ -14,7 +14,7 @@ import * as PostController from './controllers/PostController.js'
 
 
 /* vars */
-const CLUSTER_ADRESS = 'mongodb+srv://yung:dune@cluster0.6j7kqnf.mongodb.net/blogio?retryWrites=true&w=majority'
+
 
 
 
@@ -22,7 +22,7 @@ const CLUSTER_ADRESS = 'mongodb+srv://yung:dune@cluster0.6j7kqnf.mongodb.net/blo
 /* DB */
 mongoose.set('strictQuery', true)
 
-mongoose.connect(CLUSTER_ADRESS)
+mongoose.connect(process.env.MONGODB_URI)
         .then(() => {
             console.log('DB is alright fam')
         })
