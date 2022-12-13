@@ -76,7 +76,7 @@ app.post('/upload', checkAuth, upload.single('image'), (req, res) => {
 
 
 
-app.listen(4000, (err) => {
+app.listen(process.env.PORT || 4000, (err) => {
     if(err){
         return(console.log(err))
     }
