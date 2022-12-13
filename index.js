@@ -3,6 +3,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import multer from 'multer'
 import cors from 'cors'
+import fs, { existsSync } from 'fs'
 /* validations */
 import { loginValidation, postCreateValidation, registerValidation } from './validations.js'
 /* middleware */
@@ -34,6 +35,9 @@ mongoose.connect('mongodb+srv://yung:dune@cluster0.6j7kqnf.mongodb.net/blogio?re
 /* multer storage for img */
 const storage = multer.diskStorage({
     destination: (_, __, cb) => {
+        if(!fs.existsSync('uploads')) {
+            fs.mkdirSync('uploads')
+        }
         cb(null, 'uploads')
     },
     filename: (_, file, cb) => {
