@@ -13,6 +13,7 @@ This is a fully functioning backend for a blog, it is part of my MERN project bl
 - JWT authentication
 - storing images with multer
 - validating requests
+- password encryption using bcrypt
 
 ## Hosting
 
